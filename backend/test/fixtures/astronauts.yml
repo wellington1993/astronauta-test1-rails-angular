@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  birthdate: 2016-04-27 16:47:08
+  mission_id: 
+  space_station_id: 
+
+two:
+  name: MyString
+  birthdate: 2016-04-27 16:47:08
+  mission_id: 
+  space_station_id: 
