@@ -1,10 +1,14 @@
 # astronauta-test1-rails-angular
 Try make Angular + Rails app 
 
-Problem:
-All pages blank after descoment the line above at index.config.coffee:
-    RestangularProvider.setBaseUrl 'http://localhost:3000'
+Next Steps:
+
+ -  Create: Astronauts, SpaceStation and ways to add existing Astronauts to Missions and Space Station 
+
+ - Angular Material Design: I need study
+
+ - Create methods and virtual attributes.
+
+ - Create ways to call the Rails virtual atributes and methos from Angular like buttons
 
 
-PLease help me!
-Thanks!
