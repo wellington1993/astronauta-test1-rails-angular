@@ -54,6 +54,6 @@ class MissionsController < ApplicationController
     end
 
     def mission_params
-      params.permit(:name)
+      params.permit(:name, :id, :created_at, :updated_at)
     end
 end

@@ -19,6 +19,7 @@ angular.module 'frontend'
       mission.remove().then ->
         _.remove $scope.missions, (p) -> p.id == mission.id
 
+
     $scope.update = ->
       $scope.current_mission.save().then (response) ->
         $scope.current_mission = null

@@ -3,19 +3,32 @@ Try make Angular + Rails app
 
 To Deploy:
  - Follow: https://gist.github.com/wellington1993/fe6b74f5b1409e3d3b814aea28d884ee
+
  - Run "rails s" at backend
+
  - Run "gulp serve" at frontend
 
 
 
 Next Steps:
+ - Rials Nested Attributes with Angular
+ 
+ - Sync pages on all clients before update
 
- -  Create: Astronauts, SpaceStation and ways to add existing Astronauts to Missions and Space Station 
+ - Dual List Box for for add elements 
+
+ - Create: Astronauts, SpaceStation
+ 
+ - Add ways to add Astronauts to Missions and Space Station 
 
  - Angular Material Design: I need study
 
- - Create methods and virtual attributes.
+ - Create methods and virtual attributes on backend (Rails).
 
- - Create ways to call the Rails virtual atributes and methos from Angular like buttons
+ - Create ways to call the Rails virtual atributes and methods from Angular like buttons
+
+ - Sublime Tips, ways to promgamming more fast.
+
+ - Way to use Rails Relationships at Angular Frontend
 
 

@@ -3,9 +3,17 @@
     <section class="jumbotron">
       <h1>{{title}}</h1>
       <form ng-submit="save()">
-        <input type="text" ng-model="new_mission.name">
-        <button type="submit">Salvar</button>
+
+        <md-input-container>
+          <label>Name: </label>
+          <input ng-model="new_mission.name" type="text">
+          <md-button class="md-primary md-raised" type="submit">
+           Salvar
+          </md-button>
+        </md-input-container>
+
       </form>
+
       <ul>
        <li ng-repeat="mission in missions" >
          <form ng-submit="update()" ng-show="current_mission.id==mission.id">
@@ -15,8 +23,10 @@
          </form>
          <span ng-click="setCurrent(mission)" ng-hide="current_mission.id==mission.id">
            {{mission.name}}
-           <button ng-click="remove(mission)">X</button> 
          </span>
+         <md-button class="md-primary md-raised" ng-click="remove(mission)" ng-hide="current_mission.id==mission.id">
+           Delete
+         </md-button>
        </li>
       </ul>
     </section>
