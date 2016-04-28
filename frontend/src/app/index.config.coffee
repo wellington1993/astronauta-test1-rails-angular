@@ -1,5 +1,5 @@
 angular.module 'frontend'
-  .config ($logProvider, toastrConfig) ->
+  .config ($logProvider, toastrConfig, RestangularProvider) ->
     'ngInject'
     # Enable log
     $logProvider.debugEnabled true

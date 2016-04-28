@@ -4,18 +4,18 @@
     <section class="jumbotron">
       <h1>{{title}}</h1>
       <form ng-submit="save()">
-        <input type="text" ng-model="new_mission.description">
+        <input type="text" ng-model="new_mission.name">
         <button type="submit">Salvar</button>
       </form>
       <ul>
        <li ng-repeat="mission in missions" >
          <form ng-submit="update()" ng-show="current_mission.id==mission.id">
-           <input type="text" ng-model="current_mission.description">
+           <input type="text" ng-model="current_mission.name">
            <button ng-click="setCurrent()">Cancelar</button>
            <button type="submit">Salvar</button>
          </form>
          <span ng-click="setMission(mission)" ng-hide="current_mission.id==mission.id">
-           {{mission.description}}
+           {{mission.name}}
            <button ng-click="remove(mission)">X</button> 
          </span>
        </li>
