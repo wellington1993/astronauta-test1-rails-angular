@@ -6,7 +6,8 @@ class SpaceStationsController < ApplicationController
   def index
     @space_stations = SpaceStation.all
 
-    render json: @space_stations
+    render json: @space_stations, include: :astronauts
+
   end
 
   # GET /space_stations/1

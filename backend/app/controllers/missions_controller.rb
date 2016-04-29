@@ -6,7 +6,7 @@ class MissionsController < ApplicationController
   def index
     @missions = Mission.all
 
-    render json: @missions
+    render json: @missions, include: :astronauts
   end
 
   # GET /missions/1
