@@ -10,10 +10,10 @@ angular.module 'frontend'
 
     $scope.save = ->
       base_missions.post($scope.new_mission).then (response) ->
-        $scope.buttonDisabled = true;
+        $scope.buttonDisabled = true
         $scope.missions.push response
         $scope.new_mission.name = ''
-        $scope.buttonDisabled = false;
+        $scope.buttonDisabled = false
 
     $scope.remove = (mission) ->
       mission.remove().then ->

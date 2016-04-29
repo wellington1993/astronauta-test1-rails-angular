@@ -1,0 +1,25 @@
+
+  <md-content>
+    <section class="jumbotron">
+      <h1>{{title}}</h1>
+      <form ng-submit="save()">
+        <input type="text" ng-model="new_astronaut.name">
+        <button type="submit">Salvar</button>
+      </form>
+      <ul>
+       <li ng-repeat="astronaut in astronauts" >
+         <form ng-submit="update()" ng-show="current_astronaut.id==astronaut.id">
+           <input type="text" ng-model="current_astronaut.name">
+           <button ng-click="setCurrent()">Cancelar</button>
+           <button type="submit" ng-disabled="buttonDisabled" >Salvar</button>
+         </form>
+         <span ng-click="setCurrent(astronaut)" ng-hide="current_astronaut.id==astronaut.id">
+           {{astronaut.name}}
+           <button ng-click="remove(astronaut)">X</button> 
+         </span>
+       </li>
+      </ul>
+    </section>
+
+  </md-content>
+
