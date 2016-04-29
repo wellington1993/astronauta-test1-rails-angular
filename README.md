@@ -13,7 +13,7 @@ To Deploy:
 TO-DO:
  - Add API version "v1" in routes
 
- - Rails validations response to Angular Frontend
+ - Rails validations response to Angular Frontend (Ex: https://github.com/mozilla/fxa-auth-server/blob/master/docs/api.md#response-format")
 
  - Create general "helpers" in Angular to diggest error responses from Rails REST
 
