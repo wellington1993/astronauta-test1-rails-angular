@@ -11,6 +11,8 @@ To Deploy:
 
 
 TO-DO:
+ - Listener do Rails Websocket(to do) for aler some page update
+ 
  - Add API version "v1" in routes
 
  - Rails validations response to Angular Frontend (Ex: https://github.com/mozilla/fxa-auth-server/blob/master/docs/api.md#response-format")
