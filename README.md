@@ -10,8 +10,16 @@ To Deploy:
 
 
 
-Next Steps:
- - Rials Nested Attributes with Angular
+TO-DO:
+ - Listener do Rails Websocket(to do) for aler some page update
+ 
+ - Add API version "v1" in routes
+
+ - Rails validations response to Angular Frontend (Ex: https://github.com/mozilla/fxa-auth-server/blob/master/docs/api.md#response-format")
+
+ - Create general "helpers" in Angular to diggest error responses from Rails REST
+
+ - Rails Nested Attributes with Angular
  
  - Sync pages on all clients before update
 
