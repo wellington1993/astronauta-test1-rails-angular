@@ -4,6 +4,7 @@ angular.module 'frontend'
     $scope.title = 'Missions'
     $scope.new_mission =
       name: ''
+      astronauts: []
 
     base_missions.getList().then (response) ->
       $scope.missions = response

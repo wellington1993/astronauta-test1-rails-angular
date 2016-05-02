@@ -14,21 +14,32 @@
 
       </form>
 
-      <ul>
-       <li ng-repeat="mission in missions" >
-         <form ng-submit="update()" ng-show="current_mission.id==mission.id">
-           <input type="text" ng-model="current_mission.name">
-           <button ng-click="setCurrent()">Cancelar</button>
-           <button type="submit" ng-disabled="buttonDisabled" >Salvar</button>
-         </form>
-         <span ng-click="setCurrent(mission)" ng-hide="current_mission.id==mission.id">
-           {{mission.name}}
-         </span>
-         <md-button class="md-primary md-raised" ng-click="remove(mission)" ng-hide="current_mission.id==mission.id">
-           Delete
-         </md-button>
-       </li>
-      </ul>
+      <md-list>
+        <md-list-item class="md-3-line" ng-repeat="mission in missions" >
+          <div class="md-list-item-text" layout="column">
+            <form ng-submit="update()" ng-show="current_mission.id==mission.id">
+              <input type="text" ng-model="current_mission.name">
+              <button ng-click="setCurrent()">Cancelar</button>
+              <button type="submit" ng-disabled="buttonDisabled" >Salvar</button>
+            </form>
+            <span ng-click="setCurrent(mission)" ng-hide="current_mission.id==mission.id">
+              <b> Mission Name: </b> {{mission.name}}
+            </span>
+            <div class="md-list-item-text" layout="column" ng-hide="mission.astronauts <= 0">
+                <b>Astronauts:</b>
+                <span ng-repeat="astronaut in mission.astronauts" >
+                  Nome: {{astronaut.name}} Data nascimento:{{astronaut.birthdate}}
+                </span>
+            </div>
+            <div class="md-list-item-text" layout="column">
+              <md-button class="md-primary md-raised" ng-click="remove(mission)" ng-hide="current_mission.id==mission.id">
+                Delete
+              </md-button>
+            </div>
+
+         </div>
+       </md-list-item>
+      </md-list>
     </section>
 
   </md-content>
