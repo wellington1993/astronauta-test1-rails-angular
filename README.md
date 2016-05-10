@@ -11,6 +11,16 @@ To Deploy:
 
 
 TO-DO:
+
+
+- Level 1
+ - Create page for single object example http://localhost/mission/267
+   - Create route with param
+   - TODO: How to read the param from route at mission controller ?
+
+
+- Level 2
+
  - Listener do Rails Websocket(to do) for aler some page update
  
  - Add API version "v1" in routes
