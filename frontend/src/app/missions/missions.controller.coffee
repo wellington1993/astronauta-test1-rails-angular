@@ -16,6 +16,7 @@ angular.module 'frontend'
         $scope.new_mission.name = ''
         $scope.buttonDisabled = false
 
+
     $scope.remove = (mission) ->
       mission.remove().then ->
         _.remove $scope.missions, (p) -> p.id == mission.id

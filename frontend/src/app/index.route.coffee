@@ -14,6 +14,12 @@ angular.module 'frontend'
         controller: 'MissionsController'
         controllerAs: 'missions'
 
+      .state 'mission/{id:int}',
+        url: '/mission/{id:int}'
+        templateUrl: 'app/mission/mission.html'
+        controller: 'MissionController'
+        controllerAs: 'mission'
+
       .state 'astronauts',
         url: '/astronauts'
         templateUrl: 'app/astronauts/astronauts.html'

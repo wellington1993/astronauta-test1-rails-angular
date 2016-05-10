@@ -2,26 +2,27 @@
   <md-content>
     <section class="jumbotron">
       <h1>{{title}}</h1>
-      <form ng-submit="save()">
-        Nome: <input type="text" ng-model="new_space_station.name">
-        Descrição: <input type="text" ng-model="new_space_station.description">
-        <button type="submit">Salvar</button>
+      <form name="spaceStationForm" ng-submit="save()">
+        Nome: <input type="text" ng-model="new_space_station.name" minlength=3 ng-minlength="3" maxlength=32 ng-maxlength="32" required>
+        Descrição: <input type="text" ng-model="new_space_station.description" minlength=0 ng-minlength="0" maxlength=32 ng-maxlength="60" required>
+        <button type="submit" ng-disabled="spaceStationForm.$invalid">Salvar</button>
       </form>
       <ul>
        <li ng-repeat="space_station in space_stations" >
          <form ng-submit="update()" ng-show="current_space_station.id==space_station.id">
-           <input type="text" ng-model="current_space_station.name">
-           <input type="text" ng-model="current_space_station.description">
+           <input type="text" ng-model="current_space_station.name" ng-minlength="3" ng-maxlength="32" required>
+           <input type="text" ng-model="current_space_station.description" ng-minlength="0" ng-maxlength="60" required>
            <button ng-click="setCurrent()">Cancelar</button>
            <button type="submit" ng-disabled="buttonDisabled" >Salvar</button>
          </form>
          <span ng-click="setCurrent(space_station)" ng-hide="current_space_station.id==space_station.id">
            {{space_station.name}}, {{space_station.description}}
-           <button ng-click="remove(space_station)">X</button> 
+           <button ng-click="remove(space_station)" ng-hide="current_space_station.id==space_station.id">X</button> 
          </span>
        </li>
       </ul>
     </section>
 
   </md-content>
+
 

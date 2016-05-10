@@ -4,6 +4,7 @@ angular.module 'frontend'
     $scope.title = 'SpaceStations'
     $scope.new_space_station =
       name: ''
+      description: ''
 
     base_space_stations.getList().then (response) ->
       $scope.space_stations = response
@@ -13,6 +14,7 @@ angular.module 'frontend'
         $scope.buttonDisabled = true
         $scope.space_stations.push response
         $scope.new_space_station.name = ''
+        $scope.new_space_station.description = ''
         $scope.buttonDisabled = false
 
     $scope.remove = (space_station) ->

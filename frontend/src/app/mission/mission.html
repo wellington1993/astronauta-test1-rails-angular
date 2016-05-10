@@ -1,0 +1,22 @@
+
+  <md-content>
+    <section class="jumbotron">
+      <h1>{{title}}</h1>
+      <md-list>
+        <div>
+           <span ng-model="mission">
+             <b> Mission Name: </b> {{mission.name}}
+           </span>
+           <div class="md-list-item-text" layout="column">
+             <b>Astronauts:</b>
+             <span ng-repeat="astronaut in mission.astronauts" >
+               Nome: {{astronaut.name}} Data nascimento:{{astronaut.birthdate}}
+             </span>
+           </div>
+         </div>
+       </md-list-item>
+      </md-list>
+    </section>
+
+  </md-content>
+
