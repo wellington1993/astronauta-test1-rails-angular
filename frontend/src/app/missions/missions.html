@@ -23,18 +23,14 @@
             <span ng-click="setCurrent(mission)" ng-hide="current_mission.id==mission.id">
               <b> Mission Name: </b> {{mission.name}}
             </span>
-            <div class="md-list-item-text" layout="column" ng-hide="mission.astronauts <= 0">
-                <b>Astronauts:</b>
-                <span ng-repeat="astronaut in mission.astronauts" >
-                  Nome: {{astronaut.name}} Data nascimento:{{astronaut.birthdate}}
-                </span>
-            </div>
-            <div class="md-list-item-text" layout="column">
+            <section class="layout-wrap layout-sm-column layout-align-center-center layout-row">
               <md-button class="md-primary md-raised" ng-click="remove(mission)" ng-hide="current_mission.id==mission.id">
                 Delete
               </md-button>
-            </div>
-
+              <md-button class="md-primary md-raised" ng-href="#/mission/{{mission.id}}" ng-hide="current_mission.id==mission.id">
+                Show
+              </md-button>
+            </section>
          </div>
        </md-list-item>
       </md-list>

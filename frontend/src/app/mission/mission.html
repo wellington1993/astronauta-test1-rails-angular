@@ -1,22 +1,51 @@
 
   <md-content>
-    <section class="jumbotron">
-      <h1>{{title}}</h1>
-      <md-list>
-        <div>
-           <span ng-model="mission">
-             <b> Mission Name: </b> {{mission.name}}
-           </span>
-           <div class="md-list-item-text" layout="column">
-             <b>Astronauts:</b>
-             <span ng-repeat="astronaut in mission.astronauts" >
-               Nome: {{astronaut.name}} Data nascimento:{{astronaut.birthdate}}
-             </span>
-           </div>
-         </div>
-       </md-list-item>
-      </md-list>
-    </section>
-
+    <div layout="row" layout-sm="column" layout-align="center center">
+      <div flex>
+        <section>
+          <h1>{{title}}</h1>
+          <md-list>
+            <div>
+               <span ng-model="mission">
+                 <b> Mission Name: </b> {{mission.name}}
+               </span>
+               <div class="md-list-item-text" layout="column">
+                 <b>Astronauts:</b>
+                 <ul ng-repeat="astronaut in mission.astronauts" >
+                   <li>
+                     {{astronaut.name}}
+                     <ul ng-show="astronaut.birthdate">
+                       <li>Data nascimento:{{astronaut.birthdate}}</li>
+                     </ul>
+                   </li>
+                 </ul>
+               </div>
+             </div>
+           </md-list-item>
+          </md-list>
+        </section>
+      </div>
+      <div flex>
+        <section >
+          <h1>Astronauts</h1>
+          <md-list>
+            <div>
+               <div class="md-list-item-text" layout="column">
+                 <b>Astronauts:</b>
+                 <ul ng-repeat="astronaut in astronauts" >
+                   <li>
+                     {{astronaut.name}}
+                     <ul ng-show="astronaut.birthdate">
+                       <li>Data nascimento:{{astronaut.birthdate}}</li>
+                     </ul>
+                   </li>
+                 </ul>
+               </div>
+             </div>
+           </md-list-item>
+          </md-list>
+        </section>
+      </div>
+    </div>
   </md-content>
 

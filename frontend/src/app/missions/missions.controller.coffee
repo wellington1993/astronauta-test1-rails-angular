@@ -29,3 +29,6 @@ angular.module 'frontend'
     $scope.setCurrent = (mission) ->
       $scope.current_mission = mission
 
+    $scope.getPartial = ->
+      return 'mission/mission.html'
+

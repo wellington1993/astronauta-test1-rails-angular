@@ -12,7 +12,7 @@ class MissionsController < ApplicationController
   # GET /missions/1
   # GET /missions/1.json
   def show
-    render json: @mission
+    render json: @mission, include: :astronauts
   end
 
   # POST /missions
