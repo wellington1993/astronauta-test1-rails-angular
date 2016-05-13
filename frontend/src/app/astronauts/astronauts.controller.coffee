@@ -9,11 +9,14 @@ angular.module 'frontend'
       $scope.astronauts = response
 
     $scope.save = ->
-      base_astronauts.post($scope.new_astronaut).then (response) ->
+      base_astronauts.post($scope.new_astronaut).then ((response) ->
         $scope.buttonDisabled = true
         $scope.astronauts.push response
         $scope.new_astronaut.name = ''
         $scope.buttonDisabled = false
+        $score.errors.length = 0
+      ),(response) ->
+        $scope.errors = response.data
 
     $scope.remove = (astronaut) ->
       astronaut.remove().then ->

@@ -3,9 +3,15 @@
     <section class="jumbotron">
       <h1>{{title}}</h1>
       <form ng-submit="save()">
+        <ul ng-repeat="error in errors" ng-show="errors">
+          <li>{{ error[0]  }}</li>
+        </ul>
         <input type="text" ng-model="new_astronaut.name">
         <button type="submit">Salvar</button>
       </form>
+    </section>
+    <section>
+      <h6>*De dois cliques para editar</h6>
       <ul>
        <li ng-repeat="astronaut in astronauts" >
          <form ng-submit="update()" ng-show="current_astronaut.id==astronaut.id">
@@ -15,7 +21,7 @@
          </form>
          <span ng-click="setCurrent(astronaut)" ng-hide="current_astronaut.id==astronaut.id">
            {{astronaut.name}}
-           <button ng-click="remove(astronaut)">X</button> 
+           <button ng-click="remove(astronaut)">Excluir</button> 
          </span>
        </li>
       </ul>

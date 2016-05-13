@@ -10,16 +10,17 @@ angular.module 'frontend'
       $scope.missions = response
 
     $scope.save = ->
-      base_missions.post($scope.new_mission).then (response) ->
+      base_missions.post($scope.new_mission).then ((response) ->
         $scope.buttonDisabled = true
         $scope.missions.push response
         $scope.new_mission.name = ''
         $scope.buttonDisabled = false
-
+      ), ->
+        console.log 'There was an error saving'
 
     $scope.remove = (mission) ->
       mission.remove().then ->
-        _.remove $scope.missions, (p) -> p.id == mission.id
+        _.remove $scope.missions, (m) -> m.id == mission.id
 
 
     $scope.update = ->

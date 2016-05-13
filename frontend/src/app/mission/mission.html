@@ -34,7 +34,7 @@
                  <b>Astronauts:</b>
                  <ul ng-repeat="astronaut in astronauts" >
                    <li>
-                     {{astronaut.name}}
+                     <span ng-click="addAstronaut(astronaut)">{{astronaut.name}}</span>
                      <ul ng-show="astronaut.birthdate">
                        <li>Data nascimento:{{astronaut.birthdate}}</li>
                      </ul>
