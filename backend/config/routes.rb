@@ -1,7 +1,23 @@
 Rails.application.routes.draw do
-  resources :astronauts, except: [:new, :edit]
-  resources :missions, except: [:new, :edit]
+
+
+  resources :astronauts, except: [:new, :edit] do
+    member do
+      get 'availables'
+    end
+  end
+
+  get 'availables' => 'astronauts#availables'
+
+  resources :missions, except: [:new, :edit] do
+    member do
+      get 'availables'
+    end
+  end
+
   resources :space_stations, except: [:new, :edit]
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

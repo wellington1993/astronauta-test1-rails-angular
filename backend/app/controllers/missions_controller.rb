@@ -15,6 +15,13 @@ class MissionsController < ApplicationController
     render json: @mission, include: :astronauts
   end
 
+  # GET /missions/1/availables
+  # GET /missions/1/avalables.json
+  def availables
+    @astronauts = Astronaut.where(mission_id: nil)
+    render json: @astronauts
+  end
+
   # POST /missions
   # POST /missions.json
   def create

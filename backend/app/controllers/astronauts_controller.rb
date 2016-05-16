@@ -9,6 +9,13 @@ class AstronautsController < ApplicationController
     render json: @astronauts
   end
 
+  # GET /astronauts/availables
+  # GET /astronauts/availables.json
+  def availables
+    @astronauts = Astronaut.where(mission_id: [nil])
+    render json: @astronauts
+  end
+
   # GET /astronauts/1
   # GET /astronauts/1.json
   def show
@@ -54,6 +61,6 @@ class AstronautsController < ApplicationController
     end
 
     def astronaut_params
-      params.permit(:name, :birthdate, :mission_id, :space_station_id)
+      params.permit(:id, :created_at, :updated_at, :name, :birthdate, :mission_id, :space_station_id)
     end
 end

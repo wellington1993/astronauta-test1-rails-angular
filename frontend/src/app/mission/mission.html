@@ -1,6 +1,6 @@
 
   <md-content>
-    <div layout="row" layout-sm="column" layout-align="center center">
+    <div layout="row" layout-sm="column" layout-align="center top">
       <div flex>
         <section>
           <h1>{{title}}</h1>
@@ -11,8 +11,9 @@
                </span>
                <div class="md-list-item-text" layout="column">
                  <b>Astronauts:</b>
+                 <h6>*Click to remove</h6>
                  <ul ng-repeat="astronaut in mission.astronauts" >
-                   <li>
+                   <li ng-click="removeAstronaut(astronaut)">
                      {{astronaut.name}}
                      <ul ng-show="astronaut.birthdate">
                        <li>Data nascimento:{{astronaut.birthdate}}</li>
@@ -27,11 +28,11 @@
       </div>
       <div flex>
         <section >
-          <h1>Astronauts</h1>
           <md-list>
             <div>
                <div class="md-list-item-text" layout="column">
-                 <b>Astronauts:</b>
+                 <b>Astronauts available to add to mission:</b>
+                 <h6>*Click to add</h6>
                  <ul ng-repeat="astronaut in astronauts" >
                    <li>
                      <span ng-click="addAstronaut(astronaut)">{{astronaut.name}}</span>

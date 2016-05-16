@@ -8,20 +8,29 @@ angular.module 'frontend'
       $scope.mission = mission_response
 
     base_astronauts.getList().then (response) ->
-      $scope.astronauts =  response
+      $scope.astronauts = response
 
     $scope.addAstronaut = (astronaut) ->
       astronaut_base = Restangular.one 'astronauts', astronaut.id
 
-      astronaut_base.get().then (response) ->
-        astronaut_to_edit = response
+      astronaut_base.get().then (base_response) ->
+        astronaut_to_edit = base_response
         astronaut_to_edit.mission_id = $scope.mission.id
 
-        astronaut_to_edit.save().then ((response) ->
-          $scope.astronauts.splice(astronaut.index,1)
-          $scope.mission.astronauts.push(astronaut)
-        ), (response) ->
-          console.log("Nao deu certo cara!")
-          console.log(response) 
+        astronaut_to_edit.save().then (edit_response) ->
+          _.remove $scope.astronauts, (a) -> a.id == astronaut_to_edit.id
+          $scope.mission.astronauts.push(astronaut_to_edit)
+
+    $scope.removeAstronaut = (astronaut) ->
+      astronaut_base = Restangular.one 'astronauts', astronaut.id
+
+      astronaut_base.get().then (base_response) ->
+        astronaut_to_edit = base_response
+        astronaut_to_edit.mission_id = null
+
+        astronaut_to_edit.save().then (edit_response) ->
+          _.remove $scope.mission.astronauts, (a) -> a.id == astronaut_to_edit.id
+          $scope.astronauts.push(astronaut_to_edit)
+
 
 
