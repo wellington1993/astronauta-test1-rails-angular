@@ -8,7 +8,7 @@
   "devDependencies": {
     "estraverse": "~4.1.0",
     "gulp": "~3.9.0",
-    "gulp-autoprefixer": "~3.0.2",
+    "gulp-autoprefixer": "~8.0.0",
     "gulp-angular-templatecache": "~1.8.0",
     "del": "~2.0.2",
     "lodash": "~3.10.1",
